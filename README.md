@@ -12,4 +12,9 @@
 Список задач с необходимыми (чёрный круг) и возможными (белый) атрибутами решения:
 <img width="2397" height="320" alt="image" src="https://github.com/user-attachments/assets/10c5ed12-8025-47dd-b4f0-f9b112f65e92" />
 
-
+Прежде начала работы над выбранной задачей необходимо реализовать предложенные оракулы и градиентный спуск, проверить корректность можно командами 
+```
+python -m scripts.run_experiment --config configs/quadratic_gd.yaml
+python -m scripts.run_experiment --config configs/logistic_gd.yaml
+python -m scripts.run_experiment --config configs/quadratic_adaptive.yaml
+```
