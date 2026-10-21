@@ -14,7 +14,9 @@ class QuadraticOracle(Oracle):
         rng = np.random.default_rng(seed)
         Q, _ = np.linalg.qr(rng.standard_normal((dim, dim)))
         mu = L / kappa
-        eigs = np.sort(np.random.uniform(mu, L, dim))
+        eigs = rng.uniform(mu, L, dim)
+        eigs[0], eigs[-1] = mu, L
+        eigs = np.sort(eigs)
         A = Q @ np.diag(eigs) @ Q.T
         self.A = 0.5 * (A + A.T)
         self.b = rng.standard_normal(dim)
